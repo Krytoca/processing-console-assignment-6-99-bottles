@@ -33,12 +33,12 @@ void setup() {
   int m = month();
   int y = year();
   
-  String s = String.valueOf(d);
-  text(s, 10, 28);
-  s = String.valueOf(m);
-  text(s, 10, 56); 
-  s = String.valueOf(y);
-  text(s, 10, 84);
+  String DOB[] = loadStrings("birthDate.txt");
+  
+  int day = Integer.parseInt(DOB[0]);
+  int month = Integer.parseInt(DOB[1]);
+  int year = Integer.parseInt(DOB[2]);
+  
 }
  
 void draw() {
