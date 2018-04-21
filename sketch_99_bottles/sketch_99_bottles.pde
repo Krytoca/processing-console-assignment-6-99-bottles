@@ -23,9 +23,9 @@ void setup() {
   
   String beverage = "pop";
   //Check year
-  if ((cutoff - currentyear) > 0) {
+  if ((cutoff-birthyear) > 0) {
     beverage = "beer";
-  } else if ((cutoff - currentyear) == 0) { 
+  } else if ((cutoff-birthyear) == 0) { 
     //Check month
     if (birthmonth < currentmonth) {
       beverage = "beer";
