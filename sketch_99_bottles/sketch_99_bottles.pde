@@ -8,12 +8,40 @@
 */
 
 void setup() {
+    //Calculate year
+  int currentday = day();
+  int currentmonth = month();
+  int currentyear = year();
+  
+  String DOB[] = loadStrings("birthDate.txt");
+  
+  int birthday = Integer.parseInt(DOB[0]);
+  int birthmonth = Integer.parseInt(DOB[1]);
+  int birthyear = Integer.parseInt(DOB[2]);
+  //The math for the age
+  int cutoff = currentyear-18;
+  
+  String beverage = "pop";
+  //Check year
+  if ((cutoff - currentyear) > 0) {
+    beverage = "beer";
+  } else if ((cutoff - currentyear) == 0) { 
+    //Check month
+    if (birthmonth < currentmonth) {
+      beverage = "beer";
+    } else if (birthmonth == currentmonth) {
+      //Check day
+      if (birthday <= currentday) {
+        beverage = "beer";
+      }
+    }
+  }
   //Make for loop for each verse to count down from 99 to 0
   for (int i = 99; i > 0; i = i-1) {
     //create if else statement for counted verses and correct finish to song
     if (i < 02) {
       print( i + " bottle of beer on the wall, ");
-      print( i + " bottle of beer");
+      print( i + " bottle of ",beverage);
       println();
       println("Take one down and pass it around, no more bottles of beer on the wall");
       println("No more bottles of beer on the wall, no more bottles of beer.");
@@ -28,17 +56,6 @@ void setup() {
     println();
     }
   }
-  //Calculate year
-  int d = day();
-  int m = month();
-  int y = year();
-  
-  String DOB[] = loadStrings("birthDate.txt");
-  
-  int day = Integer.parseInt(DOB[0]);
-  int month = Integer.parseInt(DOB[1]);
-  int year = Integer.parseInt(DOB[2]);
-  
 }
  
 void draw() {
