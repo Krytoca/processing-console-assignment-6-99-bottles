@@ -10,6 +10,15 @@
 void setup() {
   //Make for loop for each verse to count down from 99 to 0
   for (int i = 99; i > 0; i = i-1) {
+    //create if else statement for counted verses and correct finish to song
+    if (i < 02) {
+      print( i + " bottle of beer on the wall, ");
+      print( i + " bottle of beer");
+      println();
+      println("Take one down and pass it around, no more bottles of beer on the wall");
+      println("No more bottles of beer on the wall, no more bottles of beer.");
+      println("Go to the store and buy some more, 99 bottles of beer on the wall.");
+    } else {
     //Write out verse with counter variable
     print( i + " bottles of beer on the wall, ");
     print( i + " bottles of beer.");
@@ -17,6 +26,7 @@ void setup() {
     print("Take one down and pass it around, ");
     print( i + " bottles of beer.");
     println();
+    }
   }
 }
  
