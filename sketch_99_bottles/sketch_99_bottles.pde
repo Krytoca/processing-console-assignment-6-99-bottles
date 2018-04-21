@@ -8,10 +8,11 @@
 */
 
 void setup() {
-  //load lyrics file 
-  String bottles[] = loadStrings("99-bottles-of-beer-lyrics.txt");
   //Make for loop for each verse to count down from 99 to 0
-  
+  for (int i = 99; i > 0; i = i-1) {
+    //Write out verse with counter variable
+
+  }
 }
  
 void draw() {
